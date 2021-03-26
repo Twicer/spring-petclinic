@@ -39,13 +39,14 @@ sudo apt -y install maven'''
 
     stage('ARTIFACT') {
       steps {
-        echo 'error'
+        archiveArtifacts(artifacts: 'spring-petclinic-2.4.2.jar', onlyIfSuccessful: true)
       }
     }
 
     stage('DEPLOY') {
       steps {
-        sh 'java -jar ./spring-petclinic1.jar --server.port=8080'
+        sh '''java -jar ./target/spring-petclinic-2.4.2.jar
+ --server.port=8080'''
       }
     }
 
