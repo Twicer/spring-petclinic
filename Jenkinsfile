@@ -34,6 +34,10 @@ sudo apt -y install maven'''
     stage('CREATE ') {
       steps {
         echo '1'
+        sh '''cd mvnw
+mvn package
+'''
+        sh 'java -jar target/*.jar'
       }
     }
 
@@ -43,7 +47,7 @@ sudo apt -y install maven'''
       }
     }
 
-    stage('DEPLOY ') {
+    stage('DEPLOY') {
       steps {
         sh 'java -jar ./spring-petclinic1.jar --server.port=8080'
       }
