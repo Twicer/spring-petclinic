@@ -26,7 +26,7 @@ sudo apt -y install maven'''
 
     stage('BUILD') {
       steps {
-        sh './mvn package '
+        sh 'mvn package'
       }
     }
 
@@ -42,7 +42,7 @@ sudo apt -y install maven'''
       }
     }
 
-    stage('DEPLOY ') {
+    stage('DEPLOYÂ ') {
       steps {
         sh 'java -jar ./spring-petclinic1.jar --server.port=8080'
       }
