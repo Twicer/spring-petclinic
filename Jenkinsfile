@@ -38,12 +38,13 @@ sudo apt -y install maven'''
 mvn package
 '''
         sh 'java -jar target/*.jar'
+        sh 'mvn tomcat7:run'
       }
     }
 
     stage('ARTIFACT') {
       steps {
-        archiveArtifacts(caseSensitive: true, onlyIfSuccessful: true, artifacts: 'spring-petclinic1.jar')
+        echo 'error'
       }
     }
 
