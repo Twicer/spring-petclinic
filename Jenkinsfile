@@ -27,6 +27,7 @@ sudo apt -y install maven'''
     stage('BUILD') {
       steps {
         sh 'mvn package'
+        sh 'ls -la'
       }
     }
 
