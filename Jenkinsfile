@@ -40,7 +40,7 @@ sudo apt -y install maven'''
     stage('ARTIFACT') {
       steps {
         sh 'cd target'
-        archiveArtifacts(artifacts: 'spring-petclinic-2.4.2.jar', onlyIfSuccessful: true)
+        archiveArtifacts(artifacts: '/tmp/workspace/spring-petclinic_main/target/spring-petclinic-2.4.2.jar', onlyIfSuccessful: true)
       }
     }
 
